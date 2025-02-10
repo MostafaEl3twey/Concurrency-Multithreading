@@ -34,7 +34,7 @@ public class Deadlock {
 	}
 	
 	public void worker2() {
-		lock1.lock();
+		lock2.lock();
 		System.out.println("Worker2 acquires the lock1...");
 		
 		try {
@@ -43,7 +43,7 @@ public class Deadlock {
 			e.printStackTrace();
 		}
 		
-		lock2.lock();
+		lock1.lock();
 		System.out.println("Worker2 acquires the lock2...");
 		
 		lock1.unlock();
